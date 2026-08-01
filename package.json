@@ -2,6 +2,7 @@
   "name": "rubiks-cube-solver-3d",
   "private": true,
   "version": "1.0.0",
+  "author": "Aadi (https://github.com/aadiur)",
   "type": "module",
   "scripts": {
     "dev": "vite",

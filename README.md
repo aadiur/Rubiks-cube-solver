@@ -1,6 +1,7 @@
 # 🧊 3D Rubik's Cube Solver & Dynamic Rerouting Engine
 
 > **CSE Undergraduate Major Project**  
+> Developed by **[Aadi](https://github.com/aadiur)**  
 > An interactive WebGL 3D Rubik's Cube solver powered by Graph Theory, Iterative Deepening A* (IDA*) Search, Layer-by-Layer state heuristics, and continuous "Google Maps style" live route recalculation.
 
 ---
@@ -95,6 +96,15 @@ rubiks-cube-solver/
 │       ├── StateEditor.js      # 2D unfolded net state color picker
 │       └── DSAExplainModal.js  # CSE major project academic defense guide
 ```
+
+---
+
+## 👤 Author & Maintainer
+
+**Aadi**
+- Computer Science & Engineering Undergraduate
+- GitHub: [@aadiur](https://github.com/aadiur)
+- Project Repository: [https://github.com/aadiur/Rubiks-cube-solver](https://github.com/aadiur/Rubiks-cube-solver)
 
 ---
 
