@@ -1,143 +1,176 @@
-[README(2).md](https://github.com/user-attachments/files/30617952/README.2.md)
+<div align="center">
 
-# Rubik's Cube Solver
+# 🧩 Rubik's Cube Solver
 
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Rubik_cube.png" alt="Rubik's Cube" width="260" />
+### Intelligent Rubik's Cube Solver built with C++
+
+<p>
+An interactive solver that computes the sequence of moves required to solve a scrambled Rubik's Cube using efficient search algorithms and optimized data structures.
 </p>
 
-<p align="center">
-  <b>An interactive 3D Rubik's Cube solver powered by Graph Theory, IDA* search, and live route recalculation.</b>
+<p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rubik%27s_cube.svg/512px-Rubik%27s_cube.svg.png" width="220"/>
 </p>
 
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#how-it-works">How It Works</a> •
-  <a href="#getting-started">Getting Started</a>
-</p>
+![C++](https://img.shields.io/badge/C%2B%2B-17-blue?style=for-the-badge&logo=cplusplus)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Open Source](https://img.shields.io/badge/Open%20Source-Yes-orange?style=for-the-badge)
+
+</div>
 
 ---
 
-## Overview
+# 📖 Overview
 
-Rubik's Cube Solver is a CSE major project that combines **3D WebGL visualization** with **algorithmic solving techniques**. It is designed to help users not only solve a cube, but also understand the process behind the solution through a clean, interactive interface.
+This project is a **Rubik's Cube Solver** developed in **C++** that simulates cube operations and computes the solution for a scrambled cube.
 
-The project models the cube as a **state-space graph** and uses informed search to compute an efficient path from the current scrambled state to the solved state. It also supports live rerouting when the cube state changes unexpectedly during the solving flow.
+The project demonstrates concepts from
 
-## Features
+- Algorithms
+- Search Techniques
+- Object-Oriented Programming
+- State Space Representation
+- Efficient Data Structures
 
-- **Interactive 3D cube rendering** using WebGL and Three.js
-- **Smooth slice rotations** and realistic cube movement
-- **Mouse/touch drag controls** with OrbitControls support
-- **IDA* search-based solver** for state exploration
-- **Layer-by-Layer solving strategy** for guided stepwise solving
-- **Dynamic rerouting** when the cube state changes mid-solve
-- **Search telemetry panel** for nodes expanded, depth, heuristic progress, and runtime
-- **WCA scramble generator** for randomized cube states
-- **Custom state editor** for manually setting cube colors
-- **Academic defense / viva support** with graph-theory and DSA explanations
+Rather than hardcoding solutions, the cube is represented internally as a collection of states that are transformed through valid cube rotations until the solved configuration is reached.
 
-## Tech Stack
+---
 
-- **Frontend:** HTML5, JavaScript (ES6 modules)
-- **3D Rendering:** Three.js
-- **Styling:** Vanilla CSS, Tailwind CSS
-- **Build Tool:** Vite
-- **UI Extras:** Lucide Icons, Canvas Confetti
-- **Algorithms:** Graph search, heuristics, IDA*, Layer-by-Layer logic
+# ✨ Features
 
-## How It Works
+✅ Solve any valid Rubik's Cube configuration
 
-The cube is treated as a graph problem:
+✅ Efficient cube state representation
 
-- **Vertices (V):** valid cube states
-- **Edges (E):** legal moves between states
-- **Goal:** find the shortest or near-optimal sequence of moves from scramble to solution
+✅ Fast move generation
 
-The solver combines heuristics with search to evaluate promising paths efficiently. Instead of simply giving the final answer, the interface also shows the reasoning process, making it useful for both demonstration and learning.
+✅ Cube rotation simulation
 
-## Project Structure
+✅ Solution path generation
 
-```text
-rubiks-cube-solver/
-├── index.html
-├── package.json
-├── vite.config.js
-├── README.md
+✅ Modular C++ implementation
+
+✅ Clean object-oriented design
+
+---
+
+# 🏗 Project Structure
+
+```
+Rubiks-cube-solver
+│
 ├── src/
-│   ├── main.js
-│   ├── css/
-│   │   └── style.css
-│   ├── cube/
-│   │   ├── CubeState.js
-│   │   ├── CubeRenderer3D.js
-│   │   └── Scramble.js
-│   ├── solver/
-│   │   ├── GraphSolver.js
-│   │   ├── LayerByLayer.js
-│   │   ├── Heuristics.js
-│   │   └── DynamicRerouter.js
-│   └── components/
-│       ├── Dashboard.js
-│       ├── GraphVisualizer.js
-│       ├── HintOverlay.js
-│       ├── StateEditor.js
-│       └── DSAExplainModal.js
+│   ├── cube.cpp
+│   ├── solver.cpp
+│   ├── moves.cpp
+│   └── main.cpp
+│
+├── include/
+│
+├── README.md
+│
+└── LICENSE
 ```
 
-## Getting Started
+*(Modify this to match your repository structure.)*
 
-### Prerequisites
+---
 
-Make sure you have:
+# ⚙️ Tech Stack
 
-- **Node.js 16+**
-- **npm**
+| Technology | Purpose |
+|------------|---------|
+| C++ | Core Implementation |
+| STL | Data Structures |
+| OOP | Cube Modeling |
+| Graph/Search Algorithms | Solving Logic |
 
-### Installation
+---
+
+# 🚀 Getting Started
+
+Clone the repository
 
 ```bash
 git clone https://github.com/aadiur/Rubiks-cube-solver.git
-cd Rubiks-cube-solver
-npm install
-npm run dev
 ```
 
-Then open the local development URL shown in the terminal.
-
-### Production Build
+Navigate to the project
 
 ```bash
-npm run build
+cd Rubiks-cube-solver
 ```
 
-## Screenshots / Demo
+Compile
 
-You can place your project screenshots here later, for example:
+```bash
+g++ *.cpp -o cube
+```
 
-- solved cube view
-- scramble view
-- search telemetry panel
-- custom state editor
+Run
 
-## Why This Project Stands Out
+```bash
+./cube
+```
 
-This project is not just a cube solver. It is a combination of:
+---
 
-- **3D UI engineering**
-- **graph-search algorithms**
-- **heuristic optimization**
-- **state-space reasoning**
-- **interactive visualization**
+# 🧠 Concepts Used
 
-That makes it a strong portfolio project for DSA, algorithms, and frontend engineering.
+- Object-Oriented Programming
+- Search Algorithms
+- Graph Traversal
+- State Representation
+- Algorithm Optimization
+- STL Containers
+- Recursion
+- Memory Management
 
-## Author
+---
 
-**Aadi**  
-Computer Science & Engineering Undergraduate
+# 🎯 Future Improvements
 
-## License
+- GUI Visualization
 
-Distributed under the MIT License.
+- 3D Cube Rendering
+
+- AI-assisted solving
+
+- Cube Animation
+
+- Multiple solving algorithms
+
+- Performance Benchmarking
+
+- Web Version
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve this project, feel free to fork the repository and submit a pull request.
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates future development.
+
+---
+
+<div align="center">
+
+### Developed by
+
+## **Aadi U R**
+
+Computer Science Undergraduate
+
+[GitHub](https://github.com/aadiur)
+
+</div>
