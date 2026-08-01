@@ -1,36 +1,143 @@
-CSE Undergraduate Major ProjectDeveloped by [Aadi](https://github.com/aadiur)An interactive WebGL 3D Rubik's Cube solver powered by Graph Theory, Iterative Deepening A* (IDA*) Search, Layer-by-Layer state heuristics, and continuous "Google Maps style" live route recalculation.
-🌟 Key Project Highlights
-Interactive 3D WebGL Cube (Three.js): 27 individually rendered rounded sub-cubes with realistic materials, smooth animated slice rotations, OrbitControls, direct mouse/touch drag controls, and glowing 3D hint arrows.
-Dynamic "Google Maps Style" Rerouting Engine: Continuous state tracking. If the user makes an unexpected or non-optimal move during guidance, the engine instantly recalculates the shortest path from the new state graph node and updates the turn-by-turn route.
-Graph Search & DSA Engine: Multi-algorithm solver utilizing IDA (Iterative Deepening A)** and Layer-by-Layer (LBL) search heuristics with search tree telemetry (nodes expanded, depth g(n), heuristic progress h(n), execution time).
-Academic Presentation / Defense Modal: Integrated CSE Viva guide covering State Space Graph topology (4.33×1019 nodes), Branching Factor (b=18), God's Number (20), and Heuristic Admissibility.
-WCA Scrambler & Custom State Editor: Random WCA scramble generator and 2D unfolded net color-picker for real physical cube solving.
-🧠 Graph Theory & DSA Fundamentals
-State Space Graph Topology: G = (V, E) │ ├── Nodes (V) : ~4.33 × 10¹⁹ valid permutations ├── Edges (E) : 18 branching moves per node (U, D, L, R, F, B ±', 2) └── Heuristic : f(n) = g(n) + h(n) [IDA* Search]
-🛠️ Tech Stack & Dependencies
-Core: HTML5, JavaScript (ES6+ Modules), Three.js
-Styling: Vanilla CSS, Tailwind CSS (Glassmorphism design system)
-Bundler & Tooling: Vite
-Effects & Icons: Canvas-Confetti, Lucide Icons
-🚀 Quick Start Guide
-Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed (v16+ recommended).
-Installation & Local Run
-Clone the Repository:
-git clone https://github.com/YOUR_USERNAME/rubiks-cube-solver.git cd rubiks-cube-solver
-Install Dependencies:
+[README(2).md](https://github.com/user-attachments/files/30617952/README.2.md)
+
+# Rubik's Cube Solver
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Rubik_cube.png" alt="Rubik's Cube" width="260" />
+</p>
+
+<p align="center">
+  <b>An interactive 3D Rubik's Cube solver powered by Graph Theory, IDA* search, and live route recalculation.</b>
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#how-it-works">How It Works</a> •
+  <a href="#getting-started">Getting Started</a>
+</p>
+
+---
+
+## Overview
+
+Rubik's Cube Solver is a CSE major project that combines **3D WebGL visualization** with **algorithmic solving techniques**. It is designed to help users not only solve a cube, but also understand the process behind the solution through a clean, interactive interface.
+
+The project models the cube as a **state-space graph** and uses informed search to compute an efficient path from the current scrambled state to the solved state. It also supports live rerouting when the cube state changes unexpectedly during the solving flow.
+
+## Features
+
+- **Interactive 3D cube rendering** using WebGL and Three.js
+- **Smooth slice rotations** and realistic cube movement
+- **Mouse/touch drag controls** with OrbitControls support
+- **IDA* search-based solver** for state exploration
+- **Layer-by-Layer solving strategy** for guided stepwise solving
+- **Dynamic rerouting** when the cube state changes mid-solve
+- **Search telemetry panel** for nodes expanded, depth, heuristic progress, and runtime
+- **WCA scramble generator** for randomized cube states
+- **Custom state editor** for manually setting cube colors
+- **Academic defense / viva support** with graph-theory and DSA explanations
+
+## Tech Stack
+
+- **Frontend:** HTML5, JavaScript (ES6 modules)
+- **3D Rendering:** Three.js
+- **Styling:** Vanilla CSS, Tailwind CSS
+- **Build Tool:** Vite
+- **UI Extras:** Lucide Icons, Canvas Confetti
+- **Algorithms:** Graph search, heuristics, IDA*, Layer-by-Layer logic
+
+## How It Works
+
+The cube is treated as a graph problem:
+
+- **Vertices (V):** valid cube states
+- **Edges (E):** legal moves between states
+- **Goal:** find the shortest or near-optimal sequence of moves from scramble to solution
+
+The solver combines heuristics with search to evaluate promising paths efficiently. Instead of simply giving the final answer, the interface also shows the reasoning process, making it useful for both demonstration and learning.
+
+## Project Structure
+
+```text
+rubiks-cube-solver/
+├── index.html
+├── package.json
+├── vite.config.js
+├── README.md
+├── src/
+│   ├── main.js
+│   ├── css/
+│   │   └── style.css
+│   ├── cube/
+│   │   ├── CubeState.js
+│   │   ├── CubeRenderer3D.js
+│   │   └── Scramble.js
+│   ├── solver/
+│   │   ├── GraphSolver.js
+│   │   ├── LayerByLayer.js
+│   │   ├── Heuristics.js
+│   │   └── DynamicRerouter.js
+│   └── components/
+│       ├── Dashboard.js
+│       ├── GraphVisualizer.js
+│       ├── HintOverlay.js
+│       ├── StateEditor.js
+│       └── DSAExplainModal.js
+```
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have:
+
+- **Node.js 16+**
+- **npm**
+
+### Installation
+
+```bash
+git clone https://github.com/aadiur/Rubiks-cube-solver.git
+cd Rubiks-cube-solver
 npm install
-Start Development Server:
 npm run dev
-Open http://localhost:3000 in your browser.
-Build Production Bundle:
+```
+
+Then open the local development URL shown in the terminal.
+
+### Production Build
+
+```bash
 npm run build
-💻 Project Structure
-rubiks-cube-solver/ ├── index.html # Main WebGL Application Interface ├── package.json # Dependencies & build scripts ├── vite.config.js # Vite configuration ├── README.md # Project documentation ├── src/ │ ├── main.js # Application Orchestrator │ ├── css/ │ │ └── style.css # Glassmorphism cyber-dark design system │ ├── cube/ │ │ ├── CubeState.js # Permutation math & state representation │ │ ├── CubeRenderer3D.js # Three.js 3D WebGL renderer & slice animations │ │ └── Scramble.js # WCA standard move scramble generator │ ├── solver/ │ │ ├── GraphSolver.js # Core IDA* & multi-algorithm graph solver │ │ ├── LayerByLayer.js # Deterministic 7-step LBL solver engine │ │ ├── Heuristics.js # Pattern database & h(n) estimation functions │ │ └── DynamicRerouter.js # Live state path calculator ("Google Maps rerouting") │ └── components/ │ ├── Dashboard.js # Move history & control panel UI │ ├── GraphVisualizer.js # Real-time search tree telemetry panel │ ├── HintOverlay.js # Turn navigation & reroute toast banner │ ├── StateEditor.js # 2D unfolded net state color picker │ └── DSAExplainModal.js # CSE major project academic defense guide
-👤 Author & Maintainer
-Aadi
+```
+
+## Screenshots / Demo
+
+You can place your project screenshots here later, for example:
+
+- solved cube view
+- scramble view
+- search telemetry panel
+- custom state editor
+
+## Why This Project Stands Out
+
+This project is not just a cube solver. It is a combination of:
+
+- **3D UI engineering**
+- **graph-search algorithms**
+- **heuristic optimization**
+- **state-space reasoning**
+- **interactive visualization**
+
+That makes it a strong portfolio project for DSA, algorithms, and frontend engineering.
+
+## Author
+
+**Aadi**  
 Computer Science & Engineering Undergraduate
-GitHub: [@aadiur](https://github.com/aadiur)
-Project Repository: [https://github.com/aadiur/Rubiks-cube-solver](https://github.com/aadiur/Rubiks-cube-solver)
-📜 License
-Distributed under the MIT License. See LICENSE for more details
+
+## License
+
+Distributed under the MIT License.
