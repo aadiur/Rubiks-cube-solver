@@ -2,174 +2,183 @@
 
 # 🧩 Rubik's Cube Solver
 
-### Intelligent Rubik's Cube Solver built with C++
+### A sleek, interactive Rubik's Cube solver built with HTML, CSS, and JavaScript
 
 <p>
-An interactive solver that computes the sequence of moves required to solve a scrambled Rubik's Cube using efficient search algorithms and optimized data structures.
+Solve, shuffle, and explore cube rotations with an elegant web-based cube simulator powered by layered solving logic and a two-phase algorithm.
 </p>
 
 <p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rubik%27s_cube.svg/512px-Rubik%27s_cube.svg.png" width="220"/>
+  <a href="https://aadiur.github.io/rubiks-cube-solver/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Project-blue?style=for-the-badge&logo=github" alt="Live Demo">
+  </a>
+  <img src="https://img.shields.io/badge/HTML-CSS-JavaScript-orange?style=for-the-badge" alt="Tech Stack">
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" alt="Status">
 </p>
 
-![C++](https://img.shields.io/badge/C%2B%2B-17-blue?style=for-the-badge&logo=cplusplus)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Open Source](https://img.shields.io/badge/Open%20Source-Yes-orange?style=for-the-badge)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rubik%27s_cube.svg/512px-Rubik%27s_cube.svg.png" alt="Rubik's Cube" width="240" />
 
 </div>
 
 ---
 
-# 📖 Overview
+## ✨ Overview
 
-This project is a **Rubik's Cube Solver** developed in **C++** that simulates cube operations and computes the solution for a scrambled cube.
+**Rubik's Cube Solver** is an interactive browser-based project that simulates a Rubik’s Cube and solves it using algorithmic logic implemented in JavaScript. The project combines a clean UI with cube state manipulation, rotations, and solving strategies inspired by standard Rubik’s Cube methods.
 
-The project demonstrates concepts from
+It includes support for:
 
-- Algorithms
-- Search Techniques
-- Object-Oriented Programming
-- State Space Representation
-- Efficient Data Structures
-
-Rather than hardcoding solutions, the cube is represented internally as a collection of states that are transformed through valid cube rotations until the solved configuration is reached.
+* cube simulation
+* face, slice, and whole-cube rotations
+* shuffle and reset actions
+* layer-by-layer solving logic
+* two-phase solving logic using the cube.js implementation referenced in the project
 
 ---
 
-# ✨ Features
+## 🚀 Features
 
-✅ Solve any valid Rubik's Cube configuration
-
-✅ Efficient cube state representation
-
-✅ Fast move generation
-
-✅ Cube rotation simulation
-
-✅ Solution path generation
-
-✅ Modular C++ implementation
-
-✅ Clean object-oriented design
+* Interactive Rubik’s Cube visualization
+* Shuffle and reset controls
+* Face rotations with standard cube notation
+* Slice and whole-cube rotations
+* Layer-by-layer solving approach
+* Two-phase solving approach
+* Modular JavaScript structure
+* Smooth browser-based experience
 
 ---
 
-# 🏗 Project Structure
+## 🧠 How It Works
 
+The project organizes cube logic into separate JavaScript files, including:
+
+* `lbl.js` for the layer-by-layer algorithm
+* `two-phase.js` for the two-phase algorithm
+* `util.js` for helper functions like shuffle and reset
+* `initial.js` for initializing the cube state
+
+The repository also uses a cube simulator from **Cuber** and references **cube.js** for Herbert Kociemba’s two-phase algorithm.
+
+---
+
+## 🧱 Project Structure
+
+```bash
+├── cube
+│   └── js
+│       ├── lbl.js          # Layer by layer algorithm
+│       ├── two-phase.js    # Two-phase algorithm
+│       ├── util.js         # Type, shuffle, and reset helpers
+│       └── initial.js      # Initial cube setup
+└── lib
+    ├── cubejs              # Two-phase algorithm reference
+    └── cuber               # Rubik's cube simulator
 ```
-Rubiks-cube-solver
-│
-├── src/
-│   ├── cube.cpp
-│   ├── solver.cpp
-│   ├── moves.cpp
-│   └── main.cpp
-│
-├── include/
-│
-├── README.md
-│
-└── LICENSE
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Use                           |
+| ---------- | ----------------------------- |
+| HTML       | Page structure                |
+| CSS        | Styling and layout            |
+| JavaScript | Core logic                    |
+| cube.js    | Two-phase algorithm reference |
+| Cuber      | Cube simulation engine        |
+
+---
+
+## 🎮 Cube Notation
+
+### Face Rotations
+
+* `U` → clockwise Up face rotation
+* `u` → counterclockwise Up face rotation
+
+### Slice Rotations
+
+* `S / s` → Standing slice
+* `M / m` → Middle slice
+* `E / e` → Equator slice
+
+### Whole Cube Rotations
+
+* `X / x` → rotate the cube like `R / r`
+* `Y / y` → rotate the cube like `U / u`
+* `Z / z` → rotate the cube like `F / f`
+
+---
+
+## 📸 Preview
+
+> Add your own screenshot here for the strongest README:
+
+```md
+<img src="./assets/demo.png" alt="Project Screenshot" />
 ```
 
-*(Modify this to match your repository structure.)*
+You can also add a GIF like this:
+
+```md
+<img src="./assets/demo.gif" alt="Rubik's Cube Solver Demo" />
+```
 
 ---
 
-# ⚙️ Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| C++ | Core Implementation |
-| STL | Data Structures |
-| OOP | Cube Modeling |
-| Graph/Search Algorithms | Solving Logic |
-
----
-
-# 🚀 Getting Started
-
-Clone the repository
+## ▶️ Run Locally
 
 ```bash
 git clone https://github.com/aadiur/Rubiks-cube-solver.git
-```
-
-Navigate to the project
-
-```bash
 cd Rubiks-cube-solver
 ```
 
-Compile
-
-```bash
-g++ *.cpp -o cube
-```
-
-Run
-
-```bash
-./cube
-```
+Then open `index.html` in your browser, or run it through your preferred local server.
 
 ---
 
-# 🧠 Concepts Used
+## 🔮 Future Improvements
 
-- Object-Oriented Programming
-- Search Algorithms
-- Graph Traversal
-- State Representation
-- Algorithm Optimization
-- STL Containers
-- Recursion
-- Memory Management
+* 3D cube animation
+* Move-by-move solution playback
+* Better mobile UI
+* Performance analysis for solving steps
+* Difficulty modes
+* Step visualizer for solving logic
 
 ---
 
-# 🎯 Future Improvements
+## 💡 What I Learned
 
-- GUI Visualization
-
-- 3D Cube Rendering
-
-- AI-assisted solving
-
-- Cube Animation
-
-- Multiple solving algorithms
-
-- Performance Benchmarking
-
-- Web Version
+* State-based UI design
+* Algorithmic problem solving
+* Cube rotation logic
+* Modular JavaScript architecture
+* Browser-based interactivity
+* Solving strategy implementation
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
-Contributions are welcome!
+Contributions are welcome.
 
-If you'd like to improve this project, feel free to fork the repository and submit a pull request.
+If you want to improve the UI, add animations, optimize the solving logic, or make the cube more interactive, feel free to fork the repository and submit a pull request.
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
-
-It helps others discover the project and motivates future development.
+If you found this project useful, consider starring the repository. It helps the project grow and makes the work more visible.
 
 ---
 
 <div align="center">
 
-### Developed by
+### Built with curiosity, logic, and a love for puzzles.
 
-## **Aadi U R**
-
-Computer Science Undergraduate
+**Aadi U R**
 
 [GitHub](https://github.com/aadiur)
 
